@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<div class="checkout-wrapper">
+
+    <h2 class="checkout-title">Checkout</h2>
+
+    <div class="checkout-summary">
+        <p>Total Amount</p>
+        <h3 class="checkout-total">₹{{ total }}</h3>
+    </div>
+
+    <form method="POST" class="checkout-form">
+        {% csrf_token %}
+
+        <label>Delivery Address</label>
+        <textarea name="address" required placeholder="Enter complete delivery address"></textarea>
+
+        <button type="submit" class="checkout-btn-full">Place Order</button>
+    </form>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<div class="login-page">
+
+    <div class="form-container">
+        <p class="title">Login</p>
+
+        <form class="form" method="POST">
+            {% csrf_token %}
+
+            <div class="input-group">
+                <label>Username</label>
+                <input type="text" name="username" placeholder="Enter username" required>
+            </div>
+
+            <div class="input-group">
+                <label>Password</label>
+                <input type="password" name="password" placeholder="Enter password" required>
+            </div>
+
+            <div class="forget">
+                <a href="#">Forgot Password?</a>
+            </div>
+
+            <button type="submit" class="sign">
+                Login
+            </button>
+
+        </form>
+
+        <p class="signup">
+            Don't have an account?
+            <a href="{% url 'register' %}">Sign up</a>
+        </p>
+
+        <div class="error-box">
+            {% for message in messages %}
+                <p class="error-text">{{ message }}</p>
+            {% endfor %}
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

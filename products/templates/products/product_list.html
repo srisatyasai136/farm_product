@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2 class="page-title">Our Products</h2>
+
+<div class="product-grid">
+    {% for p in products %}
+        <div class="product-card">
+            <h3>{{ p.name }}</h3>
+            <p class="price">₹{{ p.price }}</p>
+
+            <a href="{% url 'add_to_cart' p.id %}" class="order-btn">Order Now</a>
+        </div>
+    {% empty %}
+        <p>No products available.</p>
+    {% endfor %}
+</div>
+
+{% endblock %}

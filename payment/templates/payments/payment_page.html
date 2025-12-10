@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="checkout-wrapper">
+
+    <h2 class="checkout-title">Complete Your Payment</h2>
+
+    <h3>Amount: ₹{{ order.total_amount }}</h3>
+
+    <button id="pay-btn" class="checkout-btn-full">Pay Now</button>
+
+</div>
+
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+<script>
+var options = {
+    "key": "{{ razorpay_key }}",
+    "amount": "{{ payment.amount }}",              // in paise
+    "currency": "INR",
+    "name": "FarmStore",
+    "description": "Order Payment",
+    "order_id": "{{ payment.razorpay_order_id }}", // correct order id
+    "handler": function (response){
+        window.location.href = "/payment/verify/?order={{ order.id }}&payment_id=" 
+                                + response.razorpay_payment_id 
+                                + "&signature=" 
+                                + response.razorpay_signature;
+    }
+};
+
+var rzp = new Razorpay(options);
+
+document.getElementById('pay-btn').onclick = function(e){
+    rzp.open();
+    e.preventDefault();
+}
+</script>
+
+{% endblock %}

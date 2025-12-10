@@ -1,0 +1,52 @@
+
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<h2 class="cart-title">Your Cart</h2>
+
+{% if items %}
+<div class="cart-container">
+
+    {% for item in items %}
+    <div class="cart-card">
+
+        <div class="cart-item-header">
+            <h3>{{ item.product.name }}</h3>
+
+            <!-- TRASH DELETE ICON -->
+            <a href="{% url 'delete_cart_item' item.id %}" class="delete-icon" title="Remove Item">
+                <!-- SVG Trash Icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                     fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M6 7h12M9 7V5a1 1 0 011-1h4a1 1 0 011 1v2m-7 4v6m4-6v6m4-6v6M4 7h16l-1 12a2 2 0 01-2 2H7a2 2 0 01-2-2L4 7z"/>
+                </svg>
+            </a>
+        </div>
+
+        <p class="qty">Qty: {{ item.quantity }}</p>
+
+        <p class="date-range">
+            {{ item.start_date }} → {{ item.end_date }}
+        </p>
+
+        <p class="item-total">₹{{ item.total_price }}</p>
+
+    </div>
+    {% endfor %}
+
+</div>
+
+<div class="cart-summary">
+    <h3>Total Amount</h3>
+    <p class="summary-total">₹{{ total }}</p>
+
+    <a href="{% url 'checkout' %}" class="checkout-btn">Proceed to Checkout</a>
+</div>
+
+{% else %}
+<p class="empty-cart">Your cart is empty.</p>
+{% endif %}
+
+{% endblock %}

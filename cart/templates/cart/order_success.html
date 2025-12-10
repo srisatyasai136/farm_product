@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<div class="success-wrapper">
+
+    <div class="success-icon">
+        ✓
+    </div>
+
+    <h2 class="success-title">Order Placed Successfully</h2>
+
+    <p class="success-text">
+        Your order <strong>#{{ order.id }}</strong> has been placed.<br>
+        Total Paid: <span class="success-amount">₹{{ order.total_amount }}</span>
+    </p>
+
+    <a href="{% url 'product_list' %}" class="success-btn">Continue Shopping</a>
+
+</div>
+
+{% endblock %}
