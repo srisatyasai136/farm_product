@@ -108,18 +108,15 @@ USE_TZ = True
 # --------------------
 # STATIC FILES (WhiteNoise + Render)
 # --------------------
-STATIC_URL = '/static/'
-
-# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_URL = "/static/"
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
+    BASE_DIR / "static",
 ]
 
-# Required for WhiteNoise
-STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+STATIC_ROOT = BASE_DIR / "staticfiles"
 
-# --------------------
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 # RAZORPAY
 # --------------------
 RAZORPAY_KEY_ID = os.getenv("RAZORPAY_KEY_ID")
