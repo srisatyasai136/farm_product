@@ -73,18 +73,14 @@ WSGI_APPLICATION = 'farm_product.wsgi.application'
 # --------------------
 # DATABASE SETTINGS (NEON/RENDER)
 # --------------------
-tmpPostgres = urlparse(os.getenv("DATABASE_URL"))
+
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': tmpPostgres.path[1:],      # remove leading slash
-        'USER': tmpPostgres.username,
-        'PASSWORD': tmpPostgres.password,
-        'HOST': tmpPostgres.hostname,
-        'PORT': tmpPostgres.port or 5432,
-        'OPTIONS': dict(parse_qsl(tmpPostgres.query)),
-    }
+    "default": dj_database_url.config(
+        default=os.getenv("DATABASE_URL"),
+        conn_max_age=600,
+        ssl_require=True
+    )
 }
 
 # --------------------
