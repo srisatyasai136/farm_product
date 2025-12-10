@@ -2,7 +2,7 @@ from pathlib import Path
 import os
 from dotenv import load_dotenv
 from urllib.parse import urlparse, parse_qsl
-
+import dj_database_url
 load_dotenv()
 
 BASE_DIR = Path(__file__).resolve().parent.parent
