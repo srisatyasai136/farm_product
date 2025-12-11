@@ -4,7 +4,7 @@ from django.shortcuts import redirect
 from cart.models import Order
 from .models import Payment
 from django.http import HttpResponse
-
+@login_required(login_url='')
 def verify_payment(request):
     order_id = request.GET.get("order")
     payment_id = request.GET.get("payment_id")
