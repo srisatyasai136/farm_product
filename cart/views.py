@@ -57,12 +57,12 @@ def cart_view(request):
     items = CartItem.objects.filter(user=request.user, is_checked_out=False)
     total = sum(i.total_price for i in items)
     return render(request, 'cart/cart.html', {'items': items, 'total': total})
-@login_required
+@login_required(login_url='/')
 def delete_cart_item(request, item_id):
     item = get_object_or_404(CartItem, id=item_id, user=request.user)
     item.delete()
     return redirect('cart_view')
-@login_required
+@login_required(login_url='/')
 def checkout(request):
     user = request.user
     cart_items = CartItem.objects.filter(user=user, is_checked_out=False)
