@@ -10,7 +10,7 @@ from datetime import date, timedelta
 from django.utils.dateparse import parse_date
 
 # Create your views here.
-@login_required
+@login_required(login_url='')
 def add_to_cart(request, product_id):
     product = get_object_or_404(Product, id=product_id)
 
@@ -52,7 +52,7 @@ def add_to_cart(request, product_id):
 
     return render(request, 'cart/add_to_cart.html', {'product': product})
 
-@login_required
+@login_required(login_url='')
 def cart_view(request):
     items = CartItem.objects.filter(user=request.user, is_checked_out=False)
     total = sum(i.total_price for i in items)
