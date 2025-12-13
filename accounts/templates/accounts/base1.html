@@ -1,0 +1,170 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sais Farms - Milk, Curd & Ghee</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <header class="hero">
+        <nav>
+            <div class="logo">Sais Farms</div>
+            <div class="nav-links">
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Products</a>
+                <div class="nav-icons">
+                    <i class="fas fa-search"></i>
+                    <i class="fas fa-shopping-cart"></i>
+                </div>
+            </div>
+        </nav>
+
+        <div class="hero-content">
+            <h1>Pure Dairy, Pure Life.</h1>
+            <p>From our family farm to your family table. Experience the taste of genuine organic dairy.</p>
+            <a href="#" class="btn-cta">Order Now</a>
+        </div>
+    </header>
+
+    <section class="section-container">
+        <div class="section-header">
+            <h2 class="section-title">Our Dairy Essentials</h2>
+            <div class="section-divider"></div>
+            <p class="section-description">We provide more than just milk. Discover our range of traditionally prepared, nutrient-rich dairy staples.</p>
+        </div>
+
+        <div class="about-grid">
+            <div class="product-card">
+                <div class="product-img-container">
+                    <img src="{% static '../media/images/milk2.jpeg' %}" alt="Fresh Milk Product">
+                </div>
+                <h3>Farm Fresh Milk</h3>
+                <p>Delivered raw and unprocessed within hours of milking. Rich in natural vitamins and minerals just as nature intended.</p>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img-container">
+                    <img src="{% static '../media/images/curd.jpg' %}" alt="Fresh Milk Product">
+                </div>
+                <h3>Thick & Creamy Curd</h3>
+                <p>Naturally set using traditional cultures. Our curd is thick, probiotic-rich, and has the perfect balance of sweet and tangy.</p>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img-container">
+                    <img src="{% static '../media/images/ghee.webp' %}" alt="Fresh Milk Product">
+                </div>
+                <h3>Traditional A2 Ghee</h3>
+                <p>Slow-cooked to golden perfection using the traditional Bilona method. Aromatic, flavorful, and incredibly healthy.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-container section-alt-bg farm-story-section">
+        <div class="section-header">
+            <h2 class="section-title" style="color: #333;">Our Dairy Farm Story</h2>
+            <div class="section-divider explore-divider" style="background-color: var(--primary-orange);"></div>
+        </div>
+
+        <div class="farm-story-content">
+            <div class="farm-text">
+                <h3>Our Aim: Purity and Wellness</h3>
+                <p>At Sais Farms, our mission is simple: to provide the purest, most nutritious dairy products while maintaining the highest standards of animal welfare and sustainable farming. We believe healthy cows produce truly healthy milk.</p>
+                
+                <h3>What We Provide</h3>
+                <p>We specialize in ethically-sourced, grass-fed A2 cow's milk. From this exceptional milk, we craft:</p>
+                <ul>
+                    <li>Farm Fresh Milk: Raw, unpasteurized, and delivered within hours of milking.</li>
+                    <li>Traditional Curd: Naturally set, rich in probiotics, and slow-cultured.</li>
+                    <li>A2 Ghee: Made with the slow Bilona process for maximum flavor and nutrition.</li>
+                </ul>
+                
+                <h3>Our Promise</h3>
+                <p>We are a zero-antibiotic, zero-hormone farm. Our cows graze freely on open pastures, ensuring their milk is naturally rich in Omega-3 fatty acids and Conjugated Linoleic Acid (CLA). Every product you receive supports sustainable agriculture and ethical farming practices.</p>
+            </div>
+            
+            <div class="farm-image-container">
+                <img src="{% static '../media/images/cows.jpg' %}" alt="Fresh Milk Product">
+            </div>
+        </div>
+    </section>
+    <section class="section-container contact-section" id="contact">
+    
+    <div class="section-header">
+        <h2 class="section-title">Get In Touch</h2>
+        <div class="section-divider"></div>
+        <p class="section-description">We'd love to hear from you! Send us a message or find our contact details below.</p>
+    </div>
+
+    <div class="contact-grid">
+        <form class="contact-form">
+            <h3>Send Us a Message</h3>
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <input type="text" placeholder="Subject">
+            <textarea placeholder="Your Message" rows="5" required></textarea>
+            <button type="submit" class="btn-cta">Submit Message</button>
+        </form>
+    </div>
+</section>
+    
+    <footer>
+        <div class="footer-container">
+            
+            <div class="footer-column footer-about">
+                <h3>Sais Farms</h3>
+                <p>Pure, ethical, and local dairy since 2023. Our commitment is to quality, animal welfare, and sustainable farming practices.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-column footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Shop Products</a></li>
+                    <li><a href="#">Our Story</a></li>
+                    <li><a href="#">FAQ & Support</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+
+                </ul>
+            </div>
+
+            <div class="footer-column footer-contact">
+                <h3>Contact & Visit</h3>
+                <p><i class="fas fa-map-marker-alt"></i> D.Muppavaram,Nidadavolu,East Godavari, Andhra Pradesh, India 534302</p>
+                <p><i class="fas fa-phone"></i> +91 6303496380</p>
+                <p><i class="fas fa-envelope"></i> srisatyasai136@gmail.com</p>
+            </div>
+
+            <div class="footer-column footer-map">
+                <h3>Find Us</h3>
+                <div class="map-placeholder">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d215.92720857513237!2d81.70655462059844!3d16.88987238937738!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2sin!4v1765614613469!5m2!1sen!2sin"
+                        width="100%" 
+                        height="100%" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 Sais Farms. All rights reserved. | Locally Sourced Dairy.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
