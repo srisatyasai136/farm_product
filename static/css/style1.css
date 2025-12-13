@@ -1,0 +1,516 @@
+/* --- General Reset --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: #444;
+    line-height: 1.6;
+    background-color: #f9f9f9; 
+}
+
+/* --- Variables --- */
+:root {
+    --primary-orange: #3acfaaed;
+    --text-grey: #666;
+    --white: #ffffff;
+    --bg-light: #f4f7f6;
+}
+
+/* --- Hero Section --- */
+.hero {
+    position: relative;
+    height: 75vh;
+    display: flex;
+    flex-direction: column;
+    color: var(--white);
+}
+
+/* --- Navigation --- */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    background: rgba(0,0,0,0.3);
+    position: fixed; /* Fixes the navigation bar relative to the viewport */
+    top: 0;          /* Aligns it to the top edge */
+    width: 100%;     /* Ensures it spans the full width */
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 1.3rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--white);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--white);
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+     color: var(--primary-orange);
+}
+
+.nav-icons i {
+    margin-left: 20px;
+    cursor: pointer;
+    font-size: 1rem;
+    color: var(--white);
+}
+
+/* --- Hero Content --- */
+.hero-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #e0b18c;
+    background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.2)), url('../../media/images/milk2.jpeg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover 50%;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 15px;
+    font-weight: 800;
+    letter-spacing: -1px;
+    text-shadow: 0 2px 10px rgba(255, 106, 106, 0.3);
+}
+
+.hero-content p {
+    font-size: 1.1rem;
+    margin-bottom: 35px;
+    font-weight: 500;
+    max-width: 600px;
+}
+
+.btn-cta {
+    background-color: var(--primary-orange);
+    color: #fff;
+    padding: 15px 35px;
+    text-decoration: none;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    border-radius: 40px; 
+    transition: all 0.3s ease;
+    /* box-shadow: 0 4px 15px rgba(245, 134, 52, 0.4); */
+}
+
+.btn-cta:hover {
+    background-color: #179ba0;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(12, 155, 180, 0.501);
+}
+
+/* --- Section Styles --- */
+.section-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 5%;
+    background-color: var(--white);
+}
+
+.section-alt-bg {
+    background-color: var(--bg-light);
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-title {
+    color: var(--primary-orange);
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.section-description {
+    margin-top: 20px; 
+    color: var(--text-grey);
+}
+
+.section-divider {
+    width: 50px;
+    height: 3px;
+    background-color: #e0e0e0;
+    margin: 0 auto;
+}
+
+/* --- About Product Grid --- */
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    justify-items: center;
+}
+
+.product-card {
+    background: #fff;
+    text-align: center;
+    padding: 30px 20px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+    border: 1px solid #eee;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-orange);
+}
+
+/* Image container sizing */
+.product-img-container {
+    width: 100%;
+    max-width: 240px; /* Constrains the image size */
+    height: 200px;
+    margin: 0 auto 25px auto;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.product-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.product-card:hover .product-img-container img {
+    transform: scale(1.05);
+}
+
+.product-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.product-card p {
+    color: var(--text-grey);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* --- Farm Story Section (Replaces Explore Section) --- */
+.farm-story-section {
+    padding: 80px 5%;
+}
+
+.farm-story-content {
+    display: flex;
+    gap: 40px;
+    align-items: center; /* Vertically center items */
+    margin-top: 40px;
+}
+
+.farm-text {
+    flex: 1.2; /* Give the text slightly more space than the image */
+    max-width: 650px;
+}
+
+.farm-text h3 {
+    font-size: 1.5rem;
+    margin-top: 25px;
+    margin-bottom: 10px;
+    color: var(--primary-orange);
+    font-weight: 700;
+}
+
+.farm-text p {
+    margin-bottom: 15px;
+    color: var(--text-grey);
+}
+
+.farm-text ul {
+    list-style: none;
+    padding-left: 20px;
+    margin-top: 10px;
+}
+
+.farm-text ul li {
+    margin-bottom: 5px;
+    color: #444;
+}
+
+.farm-image-container {
+    flex: 1; 
+    /* Constraint: Sets a maximum height for the container */
+    max-height: 400px;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.farm-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image fills the container without distortion */
+}
+
+/* --- Responsive adjustment for the farm section --- */
+@media (max-width: 992px) {
+    .farm-story-content {
+        flex-direction: column; /* Stack the text and image vertically */
+        text-align: center;
+    }
+    
+    .farm-text ul {
+        text-align: left; /* Keep bullet points readable */
+        margin: 0 auto 20px;
+        width: fit-content;
+        padding-left: 0;
+    }
+    
+    .farm-image-container {
+        max-width: 100%;
+        max-height: 300px;
+    }
+}
+.section-container {
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 30px 5%;
+    background-color: var(--white);
+}
+
+/* --- Section Header Styles (For "Get In Touch") --- */
+.section-header {
+    text-align: center;
+    margin-bottom: 30px; /* Space below header */
+}
+
+.section-title {
+    color: var(--primary-orange);
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.section-divider {
+    width: 50px;
+    height: 3px;
+    background-color: #e0e0e0;
+    margin: 0 auto;
+}
+
+.section-description {
+    margin-top: 15px; 
+    color: var(--text-grey);
+}
+
+/* --- Contact Grid Layout --- */
+.contact-grid {
+    /* Set up flex to center the form */
+    display: flex;
+    justify-content: center; /* Centers items horizontally */
+    margin-top: 30px;
+    padding-bottom: 50px; /* Add bottom padding to the section area */
+}
+
+/* --- Form Specific Styles --- */
+.contact-form {
+    flex: 1.5; 
+    max-width: 550px; /* Ensures the form doesn't get too wide */
+    display: flex;
+    flex-direction: column;
+    background: var(--bg-light);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.contact-form h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: border-color 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: var(--primary-orange);
+    outline: none;
+}
+
+.contact-form textarea {
+    resize: vertical; /* Allows resizing vertically but not horizontally */
+}
+
+/* --- Footer Styles (Updated) --- */
+footer {
+    background: #2b2b2b; /* Darker, modern footer color */
+    color: #f1f1f1;
+    padding-top: 20px;
+    font-size: 0.9rem;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 5%;
+    display: grid;
+    /* Creates 4 columns, adjusts spacing */
+    grid-template-columns: 1.5fr 1fr 1.5fr 2fr; 
+    gap: 40px;
+}
+
+.footer-column h3 {
+    color: var(--primary-orange);
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Links Column */
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links a {
+    color: #cccccc;
+    text-decoration: none;
+    line-height: 2.2;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: var(--primary-orange);
+}
+
+/* Contact Column */
+.footer-contact p {
+    margin-bottom: 10px;
+    line-height: 1.4;
+    color: #cccccc;
+}
+
+.footer-contact i {
+    margin-right: 10px;
+    color: var(--primary-orange);
+}
+
+/* Map Column */
+.map-placeholder {
+    width: 100%;
+    height: 150px; /* Set a fixed height for the map iframe */
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+/* Social Links */
+.social-links {
+    margin-top: 15px;
+}
+
+.social-links a {
+    color: #ccc;
+    font-size: 1.2rem;
+    margin-right: 15px;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: var(--primary-orange);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 20px 5%;
+    margin-top: 40px;
+    border-top: 1px solid #3a3a3a;
+    color: #999;
+}
+
+/* --- Responsive adjustment for Footer --- */
+@media (max-width: 768px) {
+    .footer-container {
+        /* On smaller screens, stack the columns in a 2x2 grid */
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+        padding-bottom: 30px;
+    }
+    .footer-map {
+        /* Make the map column span two columns for better visibility */
+        grid-column: span 2;
+    }
+    .footer-column {
+        text-align: center;
+    }
+    .footer-links ul {
+        width: fit-content;
+        margin: 0 auto;
+        text-align: left;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-container {
+        /* On very small screens, stack all columns vertically */
+        grid-template-columns: 1fr;
+    }
+}
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+    nav {
+        padding: 20px;
+    }
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .nav-links {
+        display: none; 
+    }
+
+    .section-container {
+        padding: 60px 20px;
+    }
+
+    .product-card {
+         max-width: 400px; 
+         margin: 0 auto;
+    }
+}
