@@ -83,7 +83,7 @@ nav {
     flex-direction: column;
     justify-content: center;
     background-color: #e0b18c;
-    background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.2)), url('../../media/images/milk2.jpeg');
+    background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.2)), url('../images/milk2.jpeg');
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover 50%;
