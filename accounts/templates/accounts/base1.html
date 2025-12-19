@@ -12,17 +12,28 @@
 
     <header class="hero">
         <nav>
-            <div class="logo">Sais Farms</div>
-            <div class="nav-links">
-                <a href="#">Home</a>
-                <a href="#">About</a>
-                <a href="#">Products</a>
-                <div class="nav-icons">
-                    <i class="fas fa-search"></i>
-                    <i class="fas fa-shopping-cart"></i>
-                </div>
-            </div>
-        </nav>
+    <div class="logo">
+        <a href="{% url 'home' %}">Sais Farms</a>
+    </div>
+
+    <div class="nav-links">
+        <a href="{% url 'home' %}">Home</a>
+        <a href="#">About</a>
+        <a href="#">Products</a>
+
+        {% if user.is_authenticated %}
+            <a href="{% url 'logout' %}">Logout</a>
+        {% else %}
+            <a href="{% url 'login' %}">Login</a>
+            <a href="{% url 'register' %}">Register</a>
+        {% endif %}
+
+        <div class="nav-icons">
+            <i class="fas fa-search"></i>
+            <i class="fas fa-shopping-cart"></i>
+        </div>
+    </div>
+</nav></nav>
 
         <div class="hero-content">
             <h1>Pure Dairy, Pure Life.</h1>
@@ -167,5 +178,6 @@
 </body>
 
 </html>
+
 
 
